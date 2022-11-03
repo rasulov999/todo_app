@@ -9,7 +9,6 @@ import 'package:todo_app/utils/images.dart';
 import 'package:todo_app/widgets/onboarding_slider.dart';
 
 import '../utils/colors.dart';
-
 class Onboarding extends StatefulWidget {
   const Onboarding({super.key});
 

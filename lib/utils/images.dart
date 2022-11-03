@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 class MyImages {
   //SVG
   static const splashlogo = "assets/svg/splash_logo.svg";

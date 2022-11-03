@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:todo_app/utils/colors.dart';
-
 class OnboardingSlider extends StatefulWidget {
   OnboardingSlider({super.key, required this.img, required this.subtitle, required this.title});
   String title;

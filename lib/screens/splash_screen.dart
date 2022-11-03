@@ -4,7 +4,6 @@ import 'package:todo_app/screens/onboarding.dart';
 
 import 'package:todo_app/utils/colors.dart';
 import 'package:todo_app/utils/images.dart';
-
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 

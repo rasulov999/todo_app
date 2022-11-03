@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo_app/screens/login_screen.dart';
 import 'package:todo_app/screens/register_screen.dart';
-
 import 'package:todo_app/utils/colors.dart';
 
 class StartScreen extends StatelessWidget {

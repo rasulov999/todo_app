@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:todo_app/screens/home_screen.dart';
+import 'package:todo_app/screens/main_page.dart';
 import 'package:todo_app/screens/register_screen.dart';
 import 'package:todo_app/utils/colors.dart';
 import 'package:todo_app/utils/images.dart';
@@ -232,7 +233,7 @@ class _LoginScreenState extends State<LoginScreen> {
     SharedPreferences _pref = await SharedPreferences.getInstance();
     _pref.setBool("isLoggedIn", true);
 
-    Navigator.pushAndRemoveUntil(context,  MaterialPageRoute(builder: (context) => HomeScreen()), (route) => false);
+    Navigator.pushAndRemoveUntil(context,  MaterialPageRoute(builder: (context) => MainPage()), (route) => false);
     
   }
 }
