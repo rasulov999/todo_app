@@ -6,6 +6,7 @@ import 'package:todo_app/screens/home_screen.dart';
 import 'package:todo_app/screens/profile_screen.dart';
 import 'package:todo_app/utils/colors.dart';
 import 'package:todo_app/utils/images.dart';
+import 'package:todo_app/widgets/add_task_widget.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -16,14 +17,13 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   int selectedIndex = 0;
+  // ignore: prefer_final_fields
   List <Widget> _pages=[
     HomeScreen(),
     CalendarScreen(),
-    Container(child: Center(
-      child: Text("ADD TODO"),
-    ),),
-FocuseScreen(),
-ProfileScreen(),
+  AddTaskWidget(),
+    FocuseScreen(),
+    ProfileScreen(),
   ];
   @override
   Widget build(BuildContext context) {
