@@ -6,23 +6,30 @@ import '../utils/colors.dart';
 import '../utils/images.dart';
 
 class GridContainer extends StatefulWidget {
-  GridContainer({super.key, required this.num, required this.onTap});
+  GridContainer(
+      {super.key, required this.num, required this.onTap, required this.index});
   int num;
   VoidCallback onTap;
+
+  int index;
   @override
   State<GridContainer> createState() => _GridContainerState();
 }
 
 class _GridContainerState extends State<GridContainer> {
+  int currentIndex = -1;
   @override
   Widget build(BuildContext context) {
-    return InkWell( onTap: widget.onTap,
+    return InkWell(
+      onTap: widget.onTap,
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
         width: 64.w,
         height: 64.h,
         decoration: BoxDecoration(
-          color: MyColors.C_272727,
+          color: currentIndex != widget.index
+              ? MyColors.C_8687E7
+              : MyColors.C_272727,
           borderRadius: BorderRadius.circular(4.r),
         ),
         child: Column(

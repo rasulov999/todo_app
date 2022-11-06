@@ -21,7 +21,7 @@ class _MainPageState extends State<MainPage> {
   List <Widget> _pages=[
     HomeScreen(),
     CalendarScreen(),
-  AddTaskWidget(),
+                           AddTaskWidget(),
     FocuseScreen(),
     ProfileScreen(),
   ];

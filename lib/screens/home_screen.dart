@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:todo_app/database/local_database.dart';
 import 'package:todo_app/utils/colors.dart';
-import 'package:todo_app/widgets/add_task_widget.dart';
 import 'package:todo_app/widgets/task_items.dart';
 import '../models/todo_model.dart';
 import '../utils/images.dart';
@@ -15,11 +14,15 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
+final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+      key: _scaffoldKey,
+      drawer: Drawer(),
       body: FutureBuilder(
         future: LocalDatabase.getList(),
         builder:
@@ -27,7 +30,8 @@ class _HomeScreenState extends State<HomeScreen> {
           if (snapshot.hasData) {
             if (snapshot.data!.isEmpty) {
               return Center(
-                child: Container(padding: EdgeInsets.only(top: 200).r,
+                child: Container(
+                  padding: EdgeInsets.only(top: 200).r,
                   height: double.infinity,
                   width: double.infinity,
                   color: MyColors.C_121212,
@@ -74,7 +78,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: [
                       InkWell(
                           onTap: () {
-                            Scaffold.of(context).openDrawer();
+                            _scaffoldKey.currentState!.openDrawer();
                           },
                           child: SvgPicture.asset(MyImages.menu)),
                       Padding(
@@ -99,29 +103,28 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ],
                   ),
-
                   Container(
                     width: double.infinity,
                     height: 600,
-                    child: ListView.builder(
-                        physics: BouncingScrollPhysics(),
-                        itemCount: snapshot.data?.length ?? 0,
-                        itemBuilder: (context, index) {
-                          return TaskItems(
-                              model: snapshot.data?[index],
-                              onDeleted: () {
-                                LocalDatabase.deleteTaskById(
-                                    snapshot.data?[index].id ?? 0);
-                                setState(() {});
-                              });
-                        }),
+                    child: Scrollbar(
+                      thumbVisibility: true,
+                      child: ListView.builder(
+                          physics: BouncingScrollPhysics(),
+                          itemCount: snapshot.data?.length ?? 0,
+                          itemBuilder: (context, index) {
+                            return TaskItems(
+                                model: snapshot.data?[index],
+                                onDeleted: () {
+                                  LocalDatabase.deleteTaskById(
+                                      snapshot.data?[index].id ?? 0);
+                                  setState(() {});
+                                });
+                          }),
+                    ),
                   ),
-                 
                 ],
               ),
             );
-
-           
           }
           return Center(child: CircularProgressIndicator());
         },

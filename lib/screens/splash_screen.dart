@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:todo_app/screens/main_page.dart';
 import 'package:todo_app/screens/onboarding.dart';
 
 import 'package:todo_app/utils/colors.dart';
