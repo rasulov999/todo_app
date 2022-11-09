@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:todo_app/screens/login_screen.dart';
-import 'package:todo_app/screens/register_screen.dart';
+import 'package:todo_app/screens/authentication/login_screen.dart';
+import 'package:todo_app/screens/authentication/register_screen.dart';
 import 'package:todo_app/utils/colors.dart';
 
 class StartScreen extends StatelessWidget {
@@ -25,15 +25,14 @@ class StartScreen extends StatelessWidget {
                   onPressed: () {
                     Navigator.pop(context);
                   },
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.arrow_back_ios,
                     color: MyColors.white,
-                  )),
+                  ),),
               SizedBox(
-                height: 46.h,
-              ),
+                height: 46.h,),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 28).r,
+                padding: const  EdgeInsets.symmetric(horizontal: 28).r,
                 child: Center(
                   child: Text(
                     "Welcome to UpTodo",
@@ -58,9 +57,7 @@ class StartScreen extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
               ),
-              SizedBox(
-                height: 370.h,
-              ),
+              SizedBox(height: 370.h,),
               InkWell(
                 onTap: () {
                   Navigator.push(
@@ -88,14 +85,11 @@ class StartScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(
-                height: 28.h,
-              ),
-           
+              SizedBox(height: 28.h,),
               InkWell(
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (_) => LoginScreen()));
+                      MaterialPageRoute(builder: (_) => RegisterScreen()));
                 },
                 child: Container(
                   width: 326.w,

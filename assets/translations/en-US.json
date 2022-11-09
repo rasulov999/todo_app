@@ -1,0 +1,35 @@
+{
+    "add_task" :"Add Task",
+    "english" :"English",
+    "uzbek" :"Uzbek",
+    "russian": "Russian",
+    "settings":"Settings",
+    "change_app_color":"Change app color",
+    "what_do_you_want_to_do_today?":"What do you want to do today?",
+    "tap+to_add your_tasks":"Tap + to add your tasks",
+    "app_settings":"App Settings",
+    "change_account_name":"Change account name",
+    "change_account_password":"Change account password",
+    "change_account_image":"Change account Image",
+    "about_us":"About US",
+    "task_left":"Task left",
+    "task_done":"Task done",
+    "faq":"FAQ",
+    "help&feedback":"Help & Feedback",
+    "support_us":"Support US",
+    "log_out":"Log out",
+    "change_app_typography":"Change app typography",
+    "change_app_language":"Change app language",
+    "import_from_google_calendar":"Import from Google calendar",
+    "task_time:":"Task Time:",
+    "task_category:":"Task Category:",
+    "task_prioritiy:":"Task prioritiy:",
+    "sub_task":"Sub-task",
+    "delete_task":"Delete Task",
+    "edit_task":"Edit Task",
+    "cancel":"Cancel",
+    "delete":"Delete"
+
+    
+
+}

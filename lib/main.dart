@@ -1,8 +1,23 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:todo_app/local_data/shared_preference.dart';
 import 'package:todo_app/screens/splash_screen.dart';
-void main() async{
-  runApp(const MyApp());
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
+  StorageRepository.getInstance();
+  runApp(EasyLocalization(
+      supportedLocales: const [
+        Locale("en", "US"),
+        Locale("ru", "RU"),
+        Locale("uz", "UZ")
+      ],
+      startLocale: const Locale('en', 'US'),
+      saveLocale: true,
+      path: 'assets/translations',
+      child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -16,11 +31,13 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       builder: (context, child) {
         return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          home: child
-        );
+            localizationsDelegates: context.localizationDelegates,
+            supportedLocales: context.supportedLocales,
+            locale: context.locale,
+            debugShowCheckedModeBanner: false,
+            home: child);
       },
-      child: SplashScreen(),
+      child: const SplashScreen(),
     );
   }
 }

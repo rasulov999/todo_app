@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:todo_app/screens/home_screen.dart';
-import 'package:todo_app/screens/login_screen.dart';
-import 'package:todo_app/screens/register_screen.dart';
-import 'package:todo_app/screens/start_screen.dart';
+import 'package:todo_app/screens/authentication/login_screen.dart';
+import 'package:todo_app/screens/authentication/register_screen.dart';
+import 'package:todo_app/screens/authentication/start_screen.dart';
 import 'package:todo_app/utils/images.dart';
 import 'package:todo_app/widgets/onboarding_slider.dart';
 

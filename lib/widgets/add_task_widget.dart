@@ -1,8 +1,10 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:todo_app/database/local_database.dart';
 import 'package:todo_app/models/todo_model.dart';
 import 'package:todo_app/utils/images.dart';
+import '../screens/main_page.dart';
 import '../utils/colors.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'grid_container.dart';
@@ -38,7 +40,7 @@ class _AddTaskWidgetState extends State<AddTaskWidget> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Add Task",
+                    "add_task".tr(),
                     style: TextStyle(
                       color: MyColors.white.withOpacity(0.87),
                       fontSize: 20,
@@ -49,7 +51,7 @@ class _AddTaskWidgetState extends State<AddTaskWidget> {
                     height: 14.h,
                   ),
                   TextFormField(
-                       style: TextStyle(color: MyColors.white),
+                    style: TextStyle(color: MyColors.white),
                     onChanged: (val) {
                       newTitle = val;
                     },
@@ -191,6 +193,11 @@ class _AddTaskWidgetState extends State<AddTaskWidget> {
                               isCompleted: 0,
                             );
                             LocalDatabase.insertToDatabase(newTodo);
+                            Navigator.pushAndRemoveUntil(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => MainPage()),
+                                (route) => false);
                           } else {
                             showDialog(
                               context: context,

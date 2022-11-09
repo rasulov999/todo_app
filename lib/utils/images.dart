@@ -34,4 +34,10 @@ class MyImages {
    static const edit = "assets/svg/edit_icon.svg";
     static const subTask = "assets/svg/sub_task_icon.svg";
      static const trash = "assets/svg/trash.svg";
+     static const brush = "assets/svg/brush_icon.svg";
+   static const text = "assets/svg/text_icon.svg";
+    static const language= "assets/svg/language_icon.svg";
+     static const import = "assets/svg/import_icon.svg";
+  static const arrowBack = "assets/svg/arrow_back_icon.svg";
+     static const searchw = "assets/svg/search_icon.svg";
 }
